@@ -9,5 +9,3 @@ RUN echo "Getting Packages..." && \
     echo "Fixing Permissions..." && \
     chmod +x /usr/bin/overdrive && \
     echo "All done"
-
-WORKDIR "/usr/bin/overdrive"
