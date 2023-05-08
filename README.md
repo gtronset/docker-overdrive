@@ -28,7 +28,7 @@ helper script:
 If needed, debugging can be done by adding the `--verbose` flag and retrying:
 
 ```sh
-download Novel.odm --verbose
+run-overdrive download Novel.odm --verbose
 ```
 
 For more information on the script, see: [https://github.com/chbrown/overdrive](https://github.com/chbrown/overdrive),
