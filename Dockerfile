@@ -9,3 +9,7 @@ RUN echo "Getting Packages..." && \
     echo "Fixing Permissions..." && \
     chmod +x /usr/bin/overdrive && \
     echo "All done"
+
+COPY run-overdrive.sh /usr/bin/run-overdrive
+
+RUN chmod +x /usr/bin/run-overdrive
