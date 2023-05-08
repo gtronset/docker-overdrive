@@ -7,7 +7,7 @@ fi
 SOURCE_PREPEND=""
 
 if [[ ! -z $SOURCE_FOLDER ]]; then
-    SOURCE_PREPEND=$SOURCE_PREPEND/
+    SOURCE_PREPEND=$SOURCE_FOLDER/
 fi
 
 /usr/bin/overdrive "$1" "$SOURCE_PREPEND$2"
