@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM lsiobase/alpine:3.17-version-579d97af
 RUN echo "Getting Packages..." && \
     apk --no-cache add \
       ca-certificates bash \
