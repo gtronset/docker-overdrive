@@ -10,4 +10,4 @@ RUN echo "Getting Packages..." && \
     chmod +x /usr/bin/overdrive && \
     echo "All done"
 
-ENTRYPOINT ["/usr/bin/overdrive"]
+WORKDIR "/usr/bin/overdrive"
