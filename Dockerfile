@@ -5,7 +5,11 @@ RUN echo "Getting Packages..." && \
       curl coreutils util-linux \
       libxml2-utils musl-utils \
       openssl tidyhtml && \
-    curl https://chbrown.github.io/overdrive/overdrive.sh -o /usr/bin/overdrive && \
+    wget https://api.github.com/repos/chbrown/overdrive/zipball/refs/tags/2.3.3 -O overdrive.zip && \
+    unzip -d ./overdrive/ -j overdrive.zip && \
+    mv overdrive/overdrive.sh /usr/bin/overdrive && \
+    rm overdrive.zip && \
+    rm -rf ./overdrive && \
     echo "Fixing Permissions..." && \
     chmod +x /usr/bin/overdrive && \
     echo "All done"
