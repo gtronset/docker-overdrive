@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# This checks the remote repository for potential updates. This script is
+# called via GitHub Action.
+
 REMOTE_REPO=chbrown/overdrive
 
 VERSION_FILE=./version
