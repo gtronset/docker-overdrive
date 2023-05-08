@@ -17,3 +17,4 @@ docker-compose.yml
 
 update.sh
 .pre-commit-config.yaml
+_typos.toml
