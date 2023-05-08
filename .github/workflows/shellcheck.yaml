@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: Shellcheck
+permissions: {}
+
+on:
+  push:
+    paths: ["**.sh"]
+  pull_request:
+    paths: ["**.sh"]
+    types: [opened, reopened]
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
