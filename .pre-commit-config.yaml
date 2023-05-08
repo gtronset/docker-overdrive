@@ -24,6 +24,11 @@ repos:
         args: ["--fix"]
         stages: [manual]
 
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.9.0
+    hooks:
+      - id: shellcheck
+
   - repo: https://github.com/crate-ci/typos
     rev: v1.14.9
     hooks:
