@@ -15,6 +15,7 @@ Dockerfile
 Dockerfile.archive
 docker-compose.yml
 
-update.sh
+update-overdrive.sh
+update-baseimage.sh
 .pre-commit-config.yaml
 _typos.toml

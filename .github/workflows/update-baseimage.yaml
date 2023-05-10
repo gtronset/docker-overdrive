@@ -1,4 +1,4 @@
-name: Overdrive Updater
+name: BaseImage Updater
 on:
   schedule:
     - cron: '0 4 * * *'
@@ -10,15 +10,15 @@ jobs:
 
       - name: Modify the specific files using scripts
         run: |
-          sh update-overdrive.sh
+          sh update-baseimage.sh
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: update/overdrive-autoupdate
-          title: Auto-update Overdrive Script
-          commit-message: Auto-update Overdrive Script
+          title: Auto-update BaseImage Script
+          commit-message: Auto-update BaseImage Script
           body: |
-            Update the version of the Overdrive script to the latest version
+            Update the version of the BaseImage to the latest version
           labels: dependencies
