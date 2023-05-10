@@ -10,15 +10,14 @@ DOCKERFILE=./Dockerfile
 BASEFILE_VERSION_TEXT="baseimage=lsiobase/alpine:"
 IMAGE_VERSION_PREFIX="ls"
 
-RELEASE_JSON=$(echo $(curl "https://api.github.com/repos/$REMOTE_REPO/releases/latest" -s))
+# shellcheck disable=SC2005
+RELEASE_JSON=$(echo "$(curl "https://api.github.com/repos/$REMOTE_REPO/releases/latest" -s)")
+# shellcheck disable=SC2086
 RELEASE_TAG=$(echo $RELEASE_JSON | jq -r '.tag_name')
 RELEASE_VERSION=$(echo "$RELEASE_TAG" | grep -oE "$IMAGE_VERSION_PREFIX.+?$" | sed "s/$IMAGE_VERSION_PREFIX//")
 
 FILE_TAG=$(grep -E "^$BASEFILE_VERSION_TEXT.+?$" "$VERSION_FILE" | sed "s~^${BASEFILE_VERSION_TEXT}~~")
 FILE_VERSION=$( echo "$FILE_TAG" | grep -oE "$IMAGE_VERSION_PREFIX.+?$" | sed "s/$IMAGE_VERSION_PREFIX//")
-
-ZIP_ROOT=${ZIP_FILE%"$RELEASE_VERSION"}
-
 
 echo "Existing/local version: $FILE_VERSION ($FILE_TAG) | Remote version: $RELEASE_VERSION ($RELEASE_TAG)"
 
