@@ -1,7 +1,7 @@
 name: BaseImage Updater
 on:
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 4 * * 0'
 jobs:
   auto-update:
     runs-on: ubuntu-latest
