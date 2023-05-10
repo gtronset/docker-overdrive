@@ -1,3 +1,7 @@
 # Ignore macOS
 .DS_Store
 ._*
+
+# Ignore Act Secrets
+.actrc
+.act-secrets

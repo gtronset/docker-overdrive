@@ -15,6 +15,12 @@ Dockerfile
 Dockerfile.archive
 docker-compose.yml
 
+# Ignore Act-related Items
+.actrc
+.act-secrets
+.act-payload.json
+
+# Ignore Dev-related Items
 update-overdrive.sh
 update-baseimage.sh
 .pre-commit-config.yaml
