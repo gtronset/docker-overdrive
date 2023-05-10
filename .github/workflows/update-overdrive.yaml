@@ -12,7 +12,7 @@ jobs:
       - name: Modify the specific files using scripts
         shell: bash
         run: |
-          sh update-overdrive.sh
+          bash update-overdrive.sh
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5

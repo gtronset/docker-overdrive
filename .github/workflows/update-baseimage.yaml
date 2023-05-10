@@ -11,7 +11,7 @@ jobs:
       - name: Modify the specific files using scripts
         shell: bash
         run: |
-          sh update-baseimage.sh
+          bash update-baseimage.sh
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
