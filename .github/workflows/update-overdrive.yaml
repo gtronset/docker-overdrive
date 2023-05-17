@@ -35,7 +35,7 @@ jobs:
           token: ${{ steps.get_bot_token.outputs.token }}
           branch: update/overdrive-autoupdate
           title: Auto-update Overdrive Script
-          commit-message: Auto-update Overdrive Script
+          commit-message: Auto-update Overdrive
           body: |
-            Update the version of the Overdrive script to the latest version
+            Update the version of the Overdrive to the latest version
           labels: dependencies
