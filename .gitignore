@@ -5,3 +5,8 @@
 # Ignore Act Secrets
 .actrc
 .act-secrets
+
+# Node
+node_modules
+package.json
+package-lock.json

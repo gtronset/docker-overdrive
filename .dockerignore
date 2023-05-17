@@ -25,3 +25,8 @@ update-overdrive.sh
 update-baseimage.sh
 .pre-commit-config.yaml
 _typos.toml
+
+# Node
+node_modules
+package.json
+package-lock.json
