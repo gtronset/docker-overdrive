@@ -1,4 +1,4 @@
-FROM lsiobase/alpine:3.17-579d97af-ls20
+FROM lsiobase/alpine:3.18-0b5e05cf-ls4
 RUN echo "Getting Packages..." && \
     apk --no-cache add \
       ca-certificates bash \
