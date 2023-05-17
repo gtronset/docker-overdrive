@@ -1,3 +1,0 @@
-overdrive=2.3.3
-baseimage=lsiobase/alpine:3.17-579d97af-ls20
-docker-overdrive=do4
