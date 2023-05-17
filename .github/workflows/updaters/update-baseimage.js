@@ -31,9 +31,10 @@ module.exports = async ({github, core}) => {
             console.log("BaseImage version update. Updating...");
 
             /* Update the Version File */
-            yamlContents.alpine_version = parseInt(latest_release_versions[1]);
+            yamlContents.alpine_version = latest_release_versions[1];
             yamlContents.lsio_version = parseInt(latest_release_versions[2]);
             fs.writeFileSync(versionFile, yaml.dump(yamlContents));
+            console.log(yamlContents)
 
             /* Update the Dockerfile */
             fs.readFile(dockerfile, 'utf8', function (err, data) {
@@ -42,6 +43,7 @@ module.exports = async ({github, core}) => {
                 }
 
                 const result = data.replace(version_regex, latest_release_tag_name);
+                console.log(result)
 
                 fs.writeFile(dockerfile, result, 'utf8', function (err) {
                     if (err) return console.log(err);
