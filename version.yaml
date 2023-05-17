@@ -1,6 +1,6 @@
 overdrive: 2.3.3
 alpine_version: '3.18'
 lsio_version: 4
-docker_overdrive: 4
-current_release: v2.3.3-do4
-previous_release: v2.3.3-do3
+docker_overdrive: 5
+current_release: v2.3.3-do5
+previous_release: v2.3.3-do4
