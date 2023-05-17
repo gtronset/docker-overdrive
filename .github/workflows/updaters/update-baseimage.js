@@ -21,7 +21,7 @@ module.exports = async ({github, core}) => {
         const latest_release_tag_name = latest_release_response.data.tag_name;
         console.log(latest_release_tag_name)
 
-        const version_regex = new RegExp(`([0-9]\.[0-9]+)-[0-9a-f]{8}-ls([0-9]+)`);
+        const version_regex = new RegExp(`([0-9]+\.[0-9]+)-[0-9a-f]{8}-ls([0-9]+)`);
         const latest_release_versions = latest_release_tag_name.match(version_regex);
 
         console.log(`Existing/local version: ${alpine_version}-ls${lsio_version} | `
