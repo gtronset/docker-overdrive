@@ -15,12 +15,12 @@ jobs:
           node-version: 16
       - run: npm install js-yaml
 
-      - name: "Prep for Release"
-        id: release_prep
+      - name: "Check for BaseImage Updates"
+        id: update_checker
         uses: "actions/github-script@v6.4.1"
         with:
           script: |
-            const script = require('./.github/workflows/update-baseimage/update-baseimage.js')
+            const script = require('./.github/workflows/updaters/update-baseimage.js')
             return await script({github, core})
 
       - uses: tibdex/github-app-token@v1
