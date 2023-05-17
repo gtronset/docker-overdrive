@@ -1,0 +1,61 @@
+name: Automerge Release PRs
+
+on:
+  pull_request_target:
+    branches:
+      - 'main'
+    types:
+      - labeled
+      - reopened
+
+env:
+  TEST_TAG: ${{ github.event.repository.full_name }}:test
+
+jobs:
+
+  test_docker_container:
+    name: Build and Test Docker image
+    if: |
+      startsWith(github.event.pull_request.title, 'New Release - docker-overdrive -> v') &&
+      github.event.label.name == 'release'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          load: true
+          tags: ${{ env.TEST_TAG }}
+
+      - name: Test Docker image
+        run: |
+          docker run --rm -i ${{ env.TEST_TAG }} overdrive --version
+
+  automerge_release_pr:
+    if: |
+      startsWith(github.event.pull_request.title, 'New Release - docker-overdrive -> v') &&
+      github.event.label.name == 'release'
+    needs: test_docker_container
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Enable Automerge
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+
+      - name: Approve
+        uses: hmarr/auto-approve-action@v3.2.1
+        with:
+          github-token: ${{ secrets.PAT }}
