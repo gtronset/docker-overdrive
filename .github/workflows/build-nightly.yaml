@@ -29,8 +29,6 @@ jobs:
 
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v2
-        with:
-          platforms: linux/amd64,linux/arm64
 
       - name: Docker Meta
         id: meta
@@ -71,7 +69,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/arm/v7,linux/arm64,linux/amd64
+          platforms: linux/arm64,linux/amd64
+          provenance: false
           push: ${{ env.SHOULD_PUBLISH }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
