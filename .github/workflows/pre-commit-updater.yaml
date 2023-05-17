@@ -1,7 +1,9 @@
 name: Pre-commit Updater
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 4 * * 0'
+
 jobs:
   auto-update-precommit:
     runs-on: ubuntu-latest
