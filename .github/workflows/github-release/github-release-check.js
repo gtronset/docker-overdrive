@@ -44,7 +44,7 @@ module.exports = async ({github, context, core}) => {
 
         const new_docker_overdrive = parseInt(docker_overdrive) + 1;
 
-        core.exportVariable('NEW_docker_overdrive', new_docker_overdrive);
+        core.exportVariable('NEW_DOCKER_OVERDRIVE', new_docker_overdrive);
 
         const new_tag_name = `v${overdrive}-do${new_docker_overdrive}`;
         console.log("New release tag: ", new_tag_name);
