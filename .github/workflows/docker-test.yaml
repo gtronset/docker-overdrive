@@ -35,4 +35,4 @@ jobs:
 
       - name: Test Docker image
         run: |
-          docker run --rm -i ${{ env.TEST_TAG }} overdrive info
+          docker run --rm -i ${{ env.TEST_TAG }} overdrive --version
