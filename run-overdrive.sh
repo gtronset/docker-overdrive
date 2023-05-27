@@ -10,4 +10,10 @@ if [[ -n $SOURCE_FOLDER ]]; then
     SOURCE_PREPEND=$SOURCE_FOLDER/
 fi
 
-/usr/bin/overdrive "$1" "$SOURCE_PREPEND$2" "$3"
+OPTIONAL_ARGS=""
+
+if [[ -n $3 ]]; then
+    OPTIONAL_ARGS="$3"
+fi
+
+/usr/bin/overdrive "$1" "$SOURCE_PREPEND$2" "$OPTIONAL_ARGS"
