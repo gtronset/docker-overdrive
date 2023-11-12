@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://json.schemastore.org/pre-commit-config.json
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-yaml
       - id: check-toml
@@ -15,7 +15,7 @@ repos:
         args: ["--maxkb=500"]
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.35.0
+    rev: v0.37.0
     hooks:
       - id: markdownlint
       - id: markdownlint
@@ -30,7 +30,7 @@ repos:
       - id: shellcheck
 
   - repo: https://github.com/crate-ci/typos
-    rev: v1.16.1
+    rev: v1.16.23
     hooks:
       - id: typos
         exclude: "(_typos.toml|.gitignore|.dockerignore)"
