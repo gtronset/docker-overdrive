@@ -5,7 +5,7 @@ RUN echo "Getting Packages..." && \
       curl coreutils util-linux \
       libxml2-utils musl-utils \
       openssl tidyhtml && \
-    wget https://api.github.com/repos/chbrown/overdrive/zipball/refs/tags/2.3.3 -O overdrive.zip && \
+    wget https://api.github.com/repos/chbrown/overdrive/zipball/refs/tags/2.4.0 -O overdrive.zip && \
     unzip -d ./overdrive/ -j overdrive.zip && \
     mv overdrive/overdrive.sh /usr/bin/overdrive && \
     rm overdrive.zip && \
