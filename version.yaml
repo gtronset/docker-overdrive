@@ -1,6 +1,6 @@
 overdrive: 2.4.0
-alpine_version: '3.18'
-lsio_version: 5
+alpine_version: '3.21'
+lsio_version: 6
 docker_overdrive: 6
 current_release: v2.3.3-do6
 previous_release: v2.3.3-do5
